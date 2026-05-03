@@ -1,13 +1,9 @@
-/** @type {import('tailwindcss').Config} */
-const config = {
-  content: ["./src/**/*.{html,js}"],
+import type { Config } from "tailwindcss";
+
+const config: Config = {
+  content: ["./app/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    extend: {
-      fontFamily: {
-        serif: ['"Cormorant Garamond"', "serif"],
-        sans: ['"DM Sans"', "system-ui", "sans-serif"],
-      },
-    },
+    extend: {},
   },
   plugins: [],
 };
