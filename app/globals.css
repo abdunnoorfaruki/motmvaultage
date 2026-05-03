@@ -1,26 +1,155 @@
 @import "tailwindcss";
 
+/* ---------------- THEME (Tailwind aware) ---------------- */
+
+@theme {
+  --color-navy: #111f90;
+  --color-pink: #ec3a71;
+  --color-pink-deep: #d12a5f;
+  --color-cyan: #15add5;
+  --color-indigo-brand: #24125f;
+  --color-yellow-brand: #d7df27;
+  --color-orange-brand: #f6921e;
+  --color-bg-deep: #0a1668;
+  --color-bg-deeper: #060f4a;
+  --color-deep: #0a1668;
+  --color-ink: #1a1a2e;
+  --color-ink-soft: #4a4a6a;
+
+  --font-display: var(--font-dm-serif), "Maragsa Display", Georgia, serif;
+  --font-body: var(--font-open-sans), -apple-system, system-ui, sans-serif;
+  --font-serif: var(--font-display);
+  --font-sans: var(--font-body);
+
+  --shadow-cta: 0 8px 24px rgba(236, 58, 113, 0.25);
+  --shadow-cta-hover: 0 12px 28px rgba(236, 58, 113, 0.35);
+
+  --animate-fade-up: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-fade-in: fadeIn 0.8s ease both;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Primary palette */
+  --color-navy: #111f90; /* Pantone 2746 C - main brand */
+  --color-pink: #ec3a71; /* Pantone 191 C - primary accent */
+  --color-cyan: #15add5; /* Pantone 2201 C - primary accent */
+
+  /* Secondary palette */
+  --color-indigo-brand: #24125f; /* Pantone 273 C - deep secondary */
+  --color-yellow-brand: #d7df27; /* Pantone 388 C - accent */
+  --color-orange-brand: #f6921e; /* Pantone 1495 C - accent */
+
+  /* Hero surfaces */
+  --color-bg-deep: #0a1668;
+  --color-bg-deeper: #060f4a;
+
+  /* Ink colors */
+  --color-ink: #1a1a2e;
+  --color-ink-soft: #4a4a6a;
+
+  /* Brand-specified type families */
+  --font-display: var(--font-dm-serif), "Maragsa Display", Georgia, serif;
+  --font-body: var(--font-open-sans), -apple-system, system-ui, sans-serif;
+
+  /* Legacy aliases used by the current page while the app is migrated. */
+  --deep: var(--color-bg-deep);
+  --pink: var(--color-pink);
+  --green: var(--color-cyan);
+  --green-light: var(--color-yellow-brand);
+  --green-pale: #eef9fc;
+  --dark: var(--color-bg-deeper);
+  --dark-2: var(--color-bg-deep);
+  --dark-3: var(--color-indigo-brand);
+  --cream: #ffffff;
+  --muted-on-dark: rgba(255, 255, 255, 0.68);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+html {
+  scroll-behavior: smooth;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.reveal {
+  opacity: 0;
+  transform: translateY(14px);
+  animation: rise 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.reveal-1 {
+  animation-delay: 0.1s;
+}
+.reveal-2 {
+  animation-delay: 0.2s;
+}
+.reveal-3 {
+  animation-delay: 0.3s;
+}
+.reveal-4 {
+  animation-delay: 0.4s;
+}
+.reveal-5 {
+  animation-delay: 0.55s;
+}
+.reveal-6 {
+  animation-delay: 0.7s;
+}
+@keyframes rise {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.scroll-fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition:
+    opacity 0.8s ease,
+    transform 0.8s ease;
+}
+.scroll-fade.in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@keyframes pulseLine {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+  .reveal,
+  .scroll-fade {
+    opacity: 1;
+    transform: none;
+  }
 }
