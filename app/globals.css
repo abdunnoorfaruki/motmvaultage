@@ -2,32 +2,6 @@
 
 /* ---------------- THEME (Tailwind aware) ---------------- */
 
-@theme {
-  --color-navy: #111f90;
-  --color-pink: #ec3a71;
-  --color-pink-deep: #d12a5f;
-  --color-cyan: #15add5;
-  --color-indigo-brand: #24125f;
-  --color-yellow-brand: #d7df27;
-  --color-orange-brand: #f6921e;
-  --color-bg-deep: #0a1668;
-  --color-bg-deeper: #060f4a;
-  --color-deep: #0a1668;
-  --color-ink: #1a1a2e;
-  --color-ink-soft: #4a4a6a;
-
-  --font-display: var(--font-dm-serif), "Maragsa Display", Georgia, serif;
-  --font-body: var(--font-open-sans), -apple-system, system-ui, sans-serif;
-  --font-serif: var(--font-display);
-  --font-sans: var(--font-body);
-
-  --shadow-cta: 0 8px 24px rgba(236, 58, 113, 0.25);
-  --shadow-cta-hover: 0 12px 28px rgba(236, 58, 113, 0.35);
-
-  --animate-fade-up: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
-  --animate-fade-in: fadeIn 0.8s ease both;
-}
-
 :root {
   /* Primary palette */
   --color-navy: #111f90; /* Pantone 2746 C - main brand */
@@ -64,6 +38,31 @@
   --muted-on-dark: rgba(255, 255, 255, 0.68);
 }
 
+@theme {
+  --color-navy: #111f90;
+  --color-pink: #ec3a71;
+  --color-pink-deep: #d12a5f;
+  --color-cyan: #15add5;
+  --color-indigo-brand: #24125f;
+  --color-yellow-brand: #d7df27;
+  --color-orange-brand: #f6921e;
+  --color-bg-deep: #0a1668;
+  --color-bg-deeper: #060f4a;
+  --color-deep: #0a1668;
+  --color-ink: #1a1a2e;
+  --color-ink-soft: #4a4a6a;
+
+  --font-display: var(--font-dm-serif), "Maragsa Display", Georgia, serif;
+  --font-body: var(--font-open-sans), -apple-system, system-ui, sans-serif;
+  --font-serif: var(--font-display);
+  --font-sans: var(--font-body);
+
+  --shadow-cta: 0 8px 24px rgba(236, 58, 113, 0.25);
+  --shadow-cta-hover: 0 12px 28px rgba(236, 58, 113, 0.35);
+
+  --animate-fade-up: fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+  --animate-fade-in: fadeIn 0.8s ease both;
+}
 html {
   scroll-behavior: smooth;
 }
