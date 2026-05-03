@@ -42,6 +42,7 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${dmSerifDisplay.variable} ${openSans.variable}`}
+      suppressHydrationWarning
     >
       <body>{children}</body>
     </html>
